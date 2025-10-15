@@ -2642,8 +2642,8 @@ describe(MediaService.name, () => {
       await sut.handleVideoConversion({ id: assetStub.video.id });
       expect(mocks.media.transcode).toHaveBeenCalledWith(
         '/original/path.ext',
-        expect.any(String),
-        expect.objectContaining({
+        'upload/encoded-video/user-id/as/se/asset-id.mp4',
+        {
           inputOptions: expect.arrayContaining([
             '-hwaccel rkmpp',
             '-hwaccel_output_format drm_prime',
